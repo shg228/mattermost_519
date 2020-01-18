@@ -167,6 +167,31 @@
         }
     }
 
+    body {
+        &.ltr .mobile-main-menu {
+            button,a {
+                text-align: left!important;
+            }
+            span.icon {
+                padding-right: 15px!important;
+                margin-right: 8px!important;
+                padding-left: unset!important;
+                margin-left: unset!important;
+            }
+        }
+        &.rtl .mobile-main-menu {
+            button,a {
+                text-align: right!important;
+            }
+            span.icon {
+                padding-left: 15px!important;
+                margin-left: 8px!important;
+                padding-right: unset!important;
+                margin-right: unset!important;
+            }
+        }
+    }
+
     .mobile-main-menu {
         .Menu__content {
             &.dropdown-menu {
@@ -330,6 +355,15 @@
         }
     }
 
+    body {
+        &.ltr .post-create__container .post-create-body .custom-textarea.custom-textarea--emoji-picker {
+            padding-right: 135px;
+        }
+        &.rtl .post-create__container .post-create-body .custom-textarea.custom-textarea--emoji-picker {
+            padding-left: 135px;
+        }
+    }
+
     .post-create__container {
         z-index: 2;
 
@@ -347,7 +381,6 @@
             .custom-textarea {
                 &.custom-textarea--emoji-picker {
                     max-height: 162px;
-                    padding-right: 135px;
                 }
             }
 
@@ -556,6 +589,36 @@
     .channel-intro {
         margin: 0 0 35px;
     }
+    body {
+        &.ltr .post.same--root.same--user {
+            .flag-icon__container {
+                left: auto;
+            }
+        }
+        &.rtl .post.same--root.same--user {
+            .flag-icon__container {
+                right: auto;
+            }
+        }
+    }
+    body {
+        &.ltr .post {
+            .post__content {
+                padding: 0 10px 0 0;
+            }
+            .post__header {
+                padding-right: 70px;
+            }
+        }
+        &.rtl .post {
+            .post__content {
+                padding: 0 0 0 10px;
+            }
+            .post__header {
+                padding-left: 70px;
+            }
+        }
+    }
 
     .post {
         &:not(.post--compact) {
@@ -658,16 +721,13 @@
         &.same--root {
             &.same--user {
                 .flag-icon__container {
-                    left: auto;
                     position: relative;
                     top: 1px;
                 }
             }
         }
 
-        .post__content {
-            padding: 0 10px 0 0;
-        }
+        
 
         &.current--user {
             &.post--comment {
@@ -679,7 +739,6 @@
 
         .post__header {
             margin-bottom: 0;
-            padding-right: 70px;
 
             .col__reply {
                 min-width: 45px;
@@ -1347,7 +1406,14 @@
             }
         }
     }
-
+    body {
+        &.ltr .search-bar__container .search-form__container{
+            padding: 0 20px 0 0;
+        }
+        &.rtl .search-bar__container .search-form__container{
+            padding: 0 0 0 20px;
+        }
+    }
     .search-bar__container {
         @include flex(0 0 50px);
         background: $primary-color;
@@ -1356,7 +1422,6 @@
 
         .search-form__container {
             color: $black;
-            padding: 0 20px 0 0;
         }
 
         .search__form {
@@ -1432,10 +1497,20 @@
             font-weight: bold;
         }
     }
-
+    body.ltr .sidebar--left {
+        @include translate3d(-290px, 0, 0);
+        &.move--right {
+            @include translate3d(0, 0, 0);
+        }
+    }
+    body.rtl .sidebar--left {
+        @include translate3d(290px, 0, 0);
+        &.move--right {
+            @include translate3d(0, 0, 0);
+        }
+    }
     .sidebar--left {
         @include single-transition(transform, .35s, ease);
-        @include translate3d(-290px, 0, 0);
         border: none;
         width: 290px;
 
@@ -1532,9 +1607,18 @@
         }
     }
 
+    body {
+        &.ltr .sidebar--right {
+            @include translate3d(100%, 0, 0);
+            right: 0;
+        }
+        &.rtl .sidebar--right {
+            @include translate3d(-100%, 0, 0);
+            left: 0;
+        }
+    }
+
     .sidebar--right {
-        @include translate3d(100%, 0, 0);
-        right: 0;
         width: 100%;
 
         .browser--ie & {
@@ -1586,7 +1670,7 @@
             vertical-align: top;
         }
 
-        .sidebar__search-clear {
+        .input-clear {
             color: inherit;
             height: 32px;
             margin-right: 0;
@@ -1602,7 +1686,7 @@
             }
         }
 
-        .sidebar__search-clear-x {
+        .input-clear-x {
             font-size: 21px;
             font-weight: 700;
             line-height: 0;
@@ -1675,6 +1759,8 @@
 
     .app__content {
         margin: 0;
+        margin-left: 0!important;
+        margin-right: 0!important;
         padding-top: 50px;
 
         .channel__wrap & {
@@ -1698,20 +1784,38 @@
         padding: 9px 21px 10px 10px !important;
     }
 
-    .multi-teams {
-
-        .app__content {
-            margin-left: 0;
-        }
-
-        .sidebar--left {
-            left: 0;
-
-            &.move--right {
-                left: 65px;
+    body {
+        &.ltr {
+            .multi-teams {
+                .app__content {
+                    margin-left: 0;
+                }
+                .sidebar--left {
+                    left: 0;
+        
+                    &.move--right {
+                        left: 65px;
+                    }
+                }
             }
         }
+        &.rtl {
+            .multi-teams {
+                .app__content {
+                    margin-right: 0;
+                }
+                .sidebar--left {
+                    right: 0;
+        
+                    &.move--right {
+                        right: 65px;
+                    }
+                }
+            }
+        }
+    }
 
+    .multi-teams {
         .team-sidebar {
             display: none;
 

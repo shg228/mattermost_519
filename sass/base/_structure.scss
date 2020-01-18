@@ -6,6 +6,51 @@ body {
 }
 
 body {
+    // &.ltr {
+    // }
+    &.rtl {
+        direction: rtl;
+        [class^="col-"] {
+            float: right;
+        }
+        .scrollbar--view {
+            margin-left: -8px!important;
+            margin-right: unset!important;
+        }
+        .nav {
+            padding-right: 0;
+            padding-left: unset;
+        }
+        .search-bar__container {
+            padding-right: 8px;
+            padding-left: unset;
+        }
+        .input-clear {
+            margin-right: unset;
+            margin-left: 20px;
+            right: unset;
+            left: 0;
+        }
+        .pull-right {
+            float: left!important;
+        }
+        .member-list__popover .more-modal__list .more-modal__details {
+            padding-left: 0;
+            padding-right: 16px;
+        }
+        .member-list__popover .more-modal__list .more-modal__row {
+            padding: 0 23px 0 12px;
+            border-left: unset;
+            &:hover {
+                padding: 0 20px 0 12px;
+                border-right-style: solid;
+                border-right-width: 3px;
+            }
+        }
+    }
+}
+
+body {
     background: $bg--gray;
     position: relative;
     width: 100%;
@@ -82,6 +127,22 @@ body {
     position: relative;
 }
 
+.dropdown-menu {
+    left: unset;
+}
+
 img {
     max-width: 100%;
+}
+
+.emoji-picker {
+    direction: ltr;
+}
+
+body.rtl .Menu .dropdown-menu {
+    right: inherit!important;
+    left: 0!important;
+    button {
+        text-align: right;
+    }
 }

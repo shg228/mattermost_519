@@ -4,11 +4,288 @@
     overflow: auto;
 }
 
+body {
+    &.ltr {
+        .admin-console {
+            padding-left: 220px;
+            &.admin {
+                padding: 0 40px 20px;
+            }
+            .color-picker__popover {
+                right: 0;
+            }
+            .panel-title a .fa {
+                float: right;
+            }
+            .btn {
+                &.btn-spacing--right {
+                    margin-right: 10px;
+                }
+        
+                .fa {
+                    margin-right: 7px;
+        
+                    &.margin-left {
+                        margin-left: 7px;
+                        margin-right: 0;
+                    }
+                }
+            }
+            .form-horizontal {
+                .control-label {
+                    text-align: left;
+                    padding-right: 0;
+                }
+        
+                .file__upload {
+                    margin: 0 10px 10px 0;
+                    input {
+                        left: 0;
+                        padding-left: 100%;
+                    }
+                }
+                .alert {
+                    .fa {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .banner {
+                .banner__icon {
+                    padding: 5px 10px 5px 5px;
+                }
+            }
+            .admin-console__header.with-back .back {
+                border-right: 1px solid alpha-color($black, .1);
+                margin-right: 20px;
+            }
+            .admin-console-save {
+                .reset-defaults-btn {
+                    right: 0;
+                }
+                .cancel-button {
+                    margin: 0 10px 0 0;
+                }
+            } 
+        }
+        .admin-console__disabled-text {
+            margin: 10px 0 0 15px;
+        }
+        .admin-sidebar {
+            left: 0;
+            .nav-pills__container .filter-container {
+                .search__icon {
+                    left: 21px;
+                }
+                .input-clear {
+                    right: 12px;
+                }
+            }
+            .sidebar-category .category-title .category-icon {
+                margin-right: 6px;
+            }
+            .sidebar-section-title {
+                padding: 6px 35px 6px 12px;
+            }
+            .sidebar-subsection-title {
+                padding: 6px 35px 6px 30px;
+            }
+            .sidebar-section-title,
+            .sidebar-subsection-title {
+                &--active::after {
+                    right: -1px;
+                }
+            }
+            .menu-icon--right {
+                .fa {
+                    right: -2px;
+                }
+                &.menu__close {
+                    right: 10px;
+                }
+            }
+        }
+        .system-users__filter-row > label span {
+            padding: 0 4px 0 8px;
+        }
+        .manage-teams {
+            .member-row--padded {
+                padding-left: 20px;
+        
+                strong {
+                    margin-right: 10px;
+                }
+            }
+            .manage-teams__info {
+                margin-left: 10px;
+            }
+            .manage-teams__team-actions {
+                margin-left: 10px;
+            }
+        }
+        .admin-setting-user__dropdown::before {
+            right: 11px;
+        }
+        .password__group-addon {
+            text-align: left;
+        }
+    }
+    &.rtl {
+        .radio-inline, .checkbox-inline {
+            margin-left: unset;
+            margin-right: 10px;
+            padding-left: unset;
+            padding-right: 20px;
+            input {
+                margin-right: unset;
+                margin-left: -20px;
+
+            }
+        }
+        .more-modal__details {
+            padding-left: unset!important;
+            padding-right: 10px!important;
+        }
+        .more-modal__actions {
+            padding-left: unset!important;
+            padding-right: 8px!important;
+        }
+        .admin-console {
+            padding-right: 220px;
+            &.admin {
+                padding: 0 0 20px 40px;
+            }
+            .color-picker__popover {
+                left: 0;
+            }
+            .panel-title a .fa {
+                float: left;
+            }
+            .btn {
+                &.btn-spacing--right {
+                    margin-left: 10px;
+                }
+        
+                .fa {
+                    margin-left: 7px;
+        
+                    &.margin-left {
+                        margin-right: 7px;
+                        margin-left: 0;
+                    }
+                }
+            }
+            .form-horizontal {
+                .control-label {
+                    text-align: right;
+                    padding-left: 0;
+                }
+        
+                .file__upload {
+                    margin: 0 0 10px 10px;
+                    input {
+                        right: 0;
+                        padding-right: 100%;
+                    }
+                }
+                .alert {
+                    .fa {
+                        margin-left: 5px;
+                    }
+                }
+            }
+            .banner {
+                .banner__icon {
+                    padding: 5px 5px 5px 10px;
+                }
+            }
+            .admin-console__header.with-back .back {
+                border-left: 1px solid alpha-color($black, .1);
+                margin-left: 20px;
+            }
+            .admin-console-save {
+                .reset-defaults-btn {
+                    left: 0;
+                }
+                .cancel-button {
+                    margin: 0 0 0 10px;
+                }                
+            }
+        }
+        .admin-console__disabled-text {
+            margin: 10px 15px 0 0;
+        }
+        .admin-sidebar {
+            right: 0;
+            .Menu__content .MenuItem a {
+                text-align: right!important;
+            }
+            .nav-pills__container .filter-container {
+                .search__icon {
+                    right: 21px;
+                }
+                .input-clear {
+                    left: 12px;
+                }
+            }
+            .sidebar-section-title::after {
+                transform: rotate(180deg);
+            }
+            .sidebar-category .category-title .category-icon {
+                margin-left: 6px;
+            }
+            .sidebar-section-title {
+                padding: 6px 12px 6px 35px;
+            }
+            .sidebar-subsection-title {
+                padding: 6px 30px 6px 35px;
+            }
+            .sidebar-section-title,
+            .sidebar-subsection-title {
+                &--active::after {
+                    left: -1px;
+                }
+            }
+            .menu-icon--right {
+                .fa {
+                    left: -2px;
+                }
+                &.menu__close {
+                    left: 10px;
+                }
+            }
+        }
+        .system-users__filter-row > label span {
+            padding: 0 4px 0 8px;
+        }
+        .manage-teams {
+            .member-row--padded {
+                padding-right: 20px;
+        
+                strong {
+                    margin-left: 10px;
+                }
+            }
+            .manage-teams__info {
+                margin-right: 10px;
+            }
+            .manage-teams__team-actions {
+                margin-right: 10px;
+            }
+        }
+        .admin-setting-user__dropdown::before {
+            left: 11px;
+        }
+        .password__group-addon {
+            text-align: right;
+        }
+    }
+}
+
 .admin-console {
     -webkit-overflow-scrolling: touch;
     color: #333;
     height: 100%;
-    padding-left: 220px;
 
     .wrapper--fixed {
         display: flex;
@@ -57,7 +334,6 @@
 
     .color-picker__popover {
         position: absolute;
-        right: 0;
         top: 40px;
         z-index: 5;
     }
@@ -117,21 +393,6 @@
         }
     }
 
-    .btn {
-        &.btn-spacing--right {
-            margin-right: 10px;
-        }
-
-        .fa {
-            margin-right: 7px;
-
-            &.margin-left {
-                margin-left: 7px;
-                margin-right: 0;
-            }
-        }
-    }
-
     .filter-control {
         .fa {
             font-size: 12px;
@@ -139,6 +400,7 @@
     }
 
     .log__panel {
+        direction: ltr;
         background-color: white;
         border: $border-gray;
         height: calc(100vh - 280px);
@@ -152,14 +414,11 @@
         background-color: #f1f1f1;
         min-height: 600px;
         overflow: auto;
-        padding: 0 40px 20px;
     }
 
     .form-horizontal {
         .control-label {
             font-weight: 600;
-            padding-right: 0;
-            text-align: left;
         }
 
         .has-error {
@@ -178,15 +437,12 @@
 
         .file__upload {
             display: inline-block;
-            margin: 0 10px 10px 0;
             position: relative;
 
             input {
                 @include opacity(0);
                 cursor: pointer;
                 height: 100%;
-                left: 0;
-                padding-left: 100%;
                 position: absolute;
                 top: 0;
                 width: 100%;
@@ -204,10 +460,6 @@
             padding: 5px 7px;
             position: relative;
             top: 1px;
-
-            .fa {
-                margin-right: 5px;
-            }
 
             &.alert-transparent {
                 background: $white;
@@ -323,7 +575,6 @@
 
             .fa {
                 color: #aaa;
-                float: right;
                 font-size: 18px;
                 margin-top: 8px;
             }
@@ -395,8 +646,6 @@
                 font-size: 3.2rem;
                 width: 60px;
                 height: 60px;
-                border-right: 1px solid alpha-color($black, .1);
-                margin-right: 20px;
                 align-items: center;
                 justify-content: space-around;
                 text-decoration: none;
@@ -443,7 +692,6 @@
             align-items: center;
             min-width: 100px;
             height: 34px;
-            margin: 0 10px 0 0;
             text-decoration: none;
             &:hover {
                 background-color: $primary-color;
@@ -460,7 +708,6 @@
         }
         .reset-defaults-btn {
             position: absolute;
-            right: 0;
             padding-right: 10px;
             padding-left: 10px;
         }
@@ -510,7 +757,6 @@
 
 .admin-console__disabled-text {
     color: #777;
-    margin: 10px 0 0 15px;
 }
 
 .admin-sidebar {
@@ -518,7 +764,6 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    left: 0;
     position: fixed;
     top: 0;
     width: 220px;
@@ -565,7 +810,6 @@
                 height: 16px;
                 position: absolute;
                 top: 16px;
-                left: 21px
             }
             .filter {
                 background: rgba(255, 255, 255, .05);
@@ -582,12 +826,11 @@
                     border: 2px solid $primary-color;
                 }
             }
-            .sidebar__search-clear {
+            .input-clear {
                 color: $white;
                 font-weight: bold;
                 position: absolute;
                 top: 10px;
-                right: 12px
             }
         }
 
@@ -608,7 +851,6 @@
             text-transform: uppercase;
 
             .category-icon {
-                margin-right: 6px;
                 overflow: hidden;
                 top: 6px;
                 vertical-align: bottom;
@@ -653,14 +895,6 @@
         }
     }
 
-    .sidebar-section-title {
-        padding: 6px 35px 6px 12px;
-    }
-
-    .sidebar-subsection-title {
-        padding: 6px 35px 6px 30px;
-    }
-
     .sidebar-section-title,
     .sidebar-subsection-title {
         color: alpha-color($white, .5);
@@ -695,7 +929,6 @@
                 display: inline-block;
                 font: normal normal normal 26px/1 FontAwesome;
                 position: absolute;
-                right: -1px;
                 text-rendering: auto;
                 top: 3px;
             }
@@ -716,7 +949,6 @@
         height: 20px;
         line-height: 20px;
         position: absolute;
-        right: 12px;
         text-align: center;
         top: 8px;
         width: 20px;
@@ -725,12 +957,10 @@
             color: $white;
             font-size: 13px;
             position: relative;
-            right: -2px;
         }
 
         &.menu__close {
             cursor: pointer;
-            right: 10px;
             top: 3px;
         }
     }
@@ -777,10 +1007,6 @@
         display: flex;
         flex: 1 1 auto;
         align-items: center;
-
-        span {
-            padding: 0 4px 0 8px;
-        }
     }
 
     label {
@@ -809,14 +1035,6 @@
         }
     }
 
-    .member-row--padded {
-        padding-left: 20px;
-
-        strong {
-            margin-right: 10px;
-        }
-    }
-
     .member-row-lone-padding {
         padding-top: 10px;
     }
@@ -831,7 +1049,6 @@
 
     .manage-teams__info {
         flex: 1;
-        margin-left: 10px;
         overflow: hidden;
         white-space: nowrap;
 
@@ -884,7 +1101,6 @@
     }
 
     .manage-teams__team-actions {
-        margin-left: 10px;
 
         // Override default react-bootstrap style
         .dropdown-toggle {
@@ -912,7 +1128,6 @@
         height: 0;
         pointer-events: none;
         position: absolute;
-        right: 11px;
         top: 15px;
         width: 0;
     }
@@ -924,8 +1139,6 @@
 
 .password__group-addon {
     min-width: 150px;
-    text-align: left;
-
 }
 
 .password__group-addon-space {

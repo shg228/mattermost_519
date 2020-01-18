@@ -1,5 +1,32 @@
 @charset 'UTF-8';
 
+body {
+    &.ltr {
+        .modal {
+            .modal-header {
+                .modal-title {
+                    float: left;
+                }
+                .close {
+                    right: 10px;
+                }
+            }
+        }
+    }
+    &.rtl {
+        .modal {
+            .modal-header {
+                .modal-title {
+                    float: right;
+                }
+                .close {
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
+
 .browser--ie {
     .modal {
         .modal-dialog {
@@ -215,7 +242,6 @@
 
         .modal-title {
             color: $bg--gray;
-            float: left;
             font-size: 17px;
             line-height: 27px;
             max-width: calc(100% - 80px);
@@ -241,7 +267,6 @@
             height: 30px;
             line-height: 30px;
             position: absolute;
-            right: 10px;
             text-shadow: none;
             width: 30px;
             z-index: 5;

@@ -8,19 +8,42 @@ body {
     }
 }
 
+body {
+    &.ltr {
+        .signup-header {
+            left: 0;
+            .fa {
+                margin-right: 4px;
+            }
+        }
+        .signup-team__container {
+            #site_name, #site_description, #login_forgot {
+                text-align: left;
+            }
+        }
+    }
+    &.rtl {
+        .signup-header {
+            right: 0;
+            .fa {
+                margin-left: 4px;
+            }
+        }
+        .signup-team__container {
+            .signup__content {
+                text-align: right;
+            }
+        }
+    }
+}
+
 .signup-header {
     background: $bg--gray;
     line-height: 33px;
-    padding: 0 1em .2em;
     width: 100%;
     position: fixed;
-    left: 0;
     top: 0;
     z-index: 5;
-
-    .fa {
-        margin-right: 4px;
-    }
 }
 
 .signup-team__container {

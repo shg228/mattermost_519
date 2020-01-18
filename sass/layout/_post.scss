@@ -359,6 +359,59 @@
     padding: 15px;
 }
 
+body {
+    &.ltr .post-create__container {
+        .custom-textarea {
+            padding: 12px 0 12px 15px;
+            &:not(.custom-textarea--emoji-picker) {
+                padding-right: 40px;
+            }
+
+            &.custom-textarea--emoji-picker {
+                padding-right: 90px;
+            }
+        }
+        .scroll {
+            .custom-textarea {
+                .post-body__actions {
+                    right: 10px;
+                }
+                &:not(.custom-textarea--emoji-picker) {
+                    padding-right: 50px;
+                }
+                &.custom-textarea--emoji-picker {
+                    padding-right: 90px;
+                }
+            }
+        }
+    }
+    &.rtl .post-create__container {
+        .custom-textarea {
+            padding: 12px 15px 12px 0;
+            &:not(.custom-textarea--emoji-picker) {
+                padding-left: 40px;
+            }
+
+            &.custom-textarea--emoji-picker {
+                padding-left: 90px;
+            }
+        }
+        .scroll {
+            .custom-textarea {
+                .post-body__actions {
+                    left: 10px;
+                }
+                &:not(.custom-textarea--emoji-picker) {
+                    padding-right: 50px;
+                }
+                &.custom-textarea--emoji-picker {
+                    padding-right: 90px;
+                }
+            }
+        }
+    }
+}
+
 .post-create__container {
     @include flex(0 0 auto);
     width: 100%;
@@ -381,16 +434,7 @@
     .custom-textarea {
         bottom: 0;
         max-height: calc(50vh - 40px);
-        padding: 12px 0 12px 15px;
         resize: none;
-
-        &:not(.custom-textarea--emoji-picker) {
-            padding-right: 40px;
-        }
-
-        &.custom-textarea--emoji-picker {
-            padding-right: 90px;
-        }
 
         &.textbox-preview-area {
             overflow-y: auto;
@@ -408,22 +452,10 @@
     }
 
     .scroll {
-        .post-body__actions {
-            right: 10px;
-        }
-
         .custom-textarea {
             -ms-overflow-style: auto;
             -webkit-overflow-scrolling: touch;
             overflow: auto;
-
-            &:not(.custom-textarea--emoji-picker) {
-                padding-right: 50px;
-            }
-
-            &.custom-textarea--emoji-picker {
-                padding-right: 90px;
-            }
         }
     }
 
@@ -537,11 +569,19 @@
     }
 }
 
+body {
+    &.ltr .post-body__actions {
+        right: 0;
+    }
+    &.rtl .post-body__actions {
+        left: 0;
+    }
+}
+
 .post-body__actions {
     display: flex;
     height: 100%;
     position: absolute;
-    right: 0;
     top: 0;
 
     > div {
@@ -678,10 +718,82 @@
     }
 }
 
+body {
+    &.ltr {
+        .post {
+            padding: 8px .5em 0 1.5em;
+            &:hover {
+                .post__header {
+                    padding: 0 55px 0 0;
+                }
+            }
+            &.same--user.same--root {
+                padding: 0 .5em 0 1.5em;
+                .flag-icon__container, .card-icon__container {
+                    left: 37px;
+                }
+            }
+            &.post--thread.same--user .post__header .post__header--info {
+                .flag-icon__container, .card-icon__container {
+                    left: 37px;
+                }
+            }
+            .post__time {
+                margin-right: 4px;
+            }
+            .post__header {
+                .col__reply {
+                    right: 0;                
+                }
+                .col__name {
+                    margin-right: 7px;
+                }
+            }
+            .post__img {
+                padding-right: 10px;
+            }
+        }
+    }
+    &.rtl {
+        .post {
+            padding: 8px 1.5em 0 .5em;
+            &:hover {
+                .post__header {
+                    padding: 0 0 0 55px;
+                }
+            }
+            &.same--user.same--root {
+                padding: 0 1.5em 0 .5em;
+                .flag-icon__container, .card-icon__container {
+                    right: 37px;
+                }
+            }
+            &.post--thread.same--user .post__header .post__header--info {
+                .flag-icon__container, .card-icon__container {
+                    right: 37px;
+                }
+            }
+            .post__time {
+                margin-left: 4px;
+            }
+            .post__header {
+                .col__reply {
+                    left: 0;                
+                }
+                .col__name {
+                    margin-left: 7px;
+                }
+            }
+            .post__img {
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
 .post {
     overflow: hidden;
     max-width: 100%;
-    padding: 8px .5em 0 1.5em; // If this needs to be changed then .post-row__padding needs to be adjusted accordingly
     position: relative;
     word-wrap: break-word;
 
@@ -807,7 +919,6 @@
                     }
 
                     .flag-icon__container, .card-icon__container {
-                        left: 37px;
                         position: absolute;
                         top: 6px;
                     }
@@ -1119,7 +1230,6 @@
 
     &.same--root {
         &.same--user {
-            padding: 0 .5em 0 1.5em;
 
             &:hover,
             &.post--hovered,
@@ -1130,7 +1240,6 @@
             }
 
             .flag-icon__container, .card-icon__container {
-                left: 37px;
                 position: absolute;
                 top: 6px;
             }
@@ -1217,12 +1326,6 @@
         max-width: 1000px;
     }
 
-    &:hover {
-        .post__header {
-            padding: 0 55px 0 0;
-        }
-    }
-
     .post__header {
         display: flex;
         margin-bottom: 2px;
@@ -1237,7 +1340,6 @@
         .col__name {
             display: flex;
             font-weight: 600;
-            margin-right: 7px;
             text-overflow: ellipsis;
             flex: 0 auto;
             min-width: 0;
@@ -1264,7 +1366,6 @@
             justify-content: flex-end;
             padding: 4px;
             position: absolute;
-            right: 0;
             top: -8px;
             white-space: normal;
             z-index: 6;
@@ -1360,7 +1461,6 @@
     }
 
     .post__img {
-        padding-right: 10px;
         text-align: right;
         width: 53px;
 
@@ -1689,7 +1789,6 @@
     .post__time {
         @include opacity(.6);
         font-size: .9em;
-        margin-right: 4px;
     }
 
     .post__permalink {

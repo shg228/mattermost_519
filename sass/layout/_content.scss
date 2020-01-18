@@ -48,12 +48,20 @@
     }
 }
 
+body {
+    &.ltr .app__content {
+        margin-left: 220px;
+    }
+    &.rtl .app__content {
+        margin-right: 220px;        
+    }
+}
+
 .app__content {
     @include display-flex;
     @include flex-direction(column);
     background: $white;
     height: 100%;
-    margin-left: 220px;
     padding-top: 50px;
     position: relative;
 

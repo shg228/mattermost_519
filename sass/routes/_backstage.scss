@@ -257,6 +257,29 @@
 
 // Backstage Form
 
+body {
+    &.ltr {
+        .backstage-form {
+            .radio,
+            .checkbox {
+                input {
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+    }
+    &.rtl {
+        .backstage-form {
+            .radio,
+            .checkbox {
+                input {
+                    margin: 0 0 0 5px;
+                }
+            }
+        }
+    }
+}
+
 .backstage-form {
     background-color: $white;
     border: 1px solid $light-gray;
@@ -279,7 +302,6 @@
     .checkbox {
         input {
             height: 16px;
-            margin: 0 5px 0 0;
             position: relative;
             top: 2px;
             width: 16px;

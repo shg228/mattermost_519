@@ -1,8 +1,41 @@
+body {
+    &.ltr {
+        .team-sidebar {
+            left: 0;            
+        }
+        .team-wrapper {
+            .team-container {
+                justify-content: center;
+                &.active::before {
+                    left: 0;
+                }
+            }
+        }
+    }
+    &.rtl {
+        .team-sidebar {
+            right: 0;
+        }
+        .team-wrapper {
+            .team-container {
+                justify-content: center;
+                &.active::before {
+                    right: 0;
+                }
+            }
+        }
+        .TeamIcon {
+            margin-right: unset;
+            margin-left: 20px;
+        }
+    }
+}
+
 .team-sidebar {
+    z-index: 1!important;
     display: flex;
     flex-direction: column;
     height: 100%;
-    left: 0;
     position: fixed;
     text-align: center;
     width: 65px;
@@ -39,7 +72,6 @@
 
         .team-container {
             display: flex;
-            justify-content: center;
             margin-bottom: 16px;
             position: relative;
             text-align: center;
@@ -79,7 +111,6 @@
                 background: $black;
                 content: '';
                 height: 42px;
-                left: 0;
                 position: absolute;
                 top: 1px;
                 width: 5px;
@@ -116,14 +147,26 @@
     }
 }
 
-.multi-teams {
-    .sidebar--left {
-        left: 65px;
+body {
+    &.ltr {
+        .sidebar--left {
+            left: 65px;
+        }
+        .app__content {
+            margin-left: 285px;
+        }
     }
+    &.rtl {
+        .sidebar--left {
+            right: 65px;
+        }
+        .app__content {
+            margin-right: 285px;
+        }
+    }
+}
 
-    .app__content {
-        margin-left: 285px;
-    }
+.multi-teams {
     .team-sidebar {
         .team-wrapper {
             .team-container {

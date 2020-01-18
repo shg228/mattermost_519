@@ -44,6 +44,66 @@
     }
 }
 
+body {
+    &.ltr {
+        .nav-pills {
+            > li {
+                button {
+                    text-align: left;
+                }
+                .icon {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &.rtl {
+        .nav-pills {
+            > li {
+                button {
+                    text-align: right;
+                }
+                .icon {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+body {
+    &.ltr .modal {
+        .settings-modal {
+            .radio label {
+                &.text-left {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    &.rtl .modal {
+        .settings-modal {
+            .radio label, .checkbox label {
+                padding-left: unset;
+                padding-right: 20px;
+                &.text-left {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+body.rtl {
+    .radio input[type=radio],
+    .radio-inline input[type=radio],
+    .checkbox input[type=checkbox],
+    .checkbox-inline input[type=checkbox] {
+        margin-left: unset;
+        margin-right: -20px;
+    }
+}
+
 .modal {
     .settings-modal {
         width: 800px;
@@ -80,10 +140,6 @@
 
         label {
             font-weight: 600;
-
-            &.text-left {
-                text-align: left;
-            }
 
             &.has-error {
                 font-weight: normal;
@@ -473,7 +529,6 @@
                 color: $gray;
                 overflow: hidden;
                 padding: 8px 15px;
-                text-align: left;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 width: 100%;
@@ -633,21 +688,49 @@
     }
 }
 
+body {
+    &.ltr {
+        .section-min__title {
+            padding-right: 50px;
+        }
+    }
+    &.rtl {
+        .section-min__title {
+            padding-left: 50px;
+        }
+    }
+}
+
 .section-min__title {
     font-weight: 600;
     margin-bottom: 5px;
-    padding-right: 50px;
+}
+
+body {
+    &.ltr {
+        .section-min__edit {
+            text-align: right;
+            .fa {
+                margin-right: 5px;                
+            }
+        }
+    }
+    &.rtl {
+        .section-min__edit {
+            text-align: left;
+            .fa {
+                margin-left: 5px;
+            }
+        }     
+    }
 }
 
 .section-min__edit {
     margin-bottom: 5px;
-    text-align: right;
-
     .fa {
         @include opacity(.5);
         display: none;
         font-size: 12px;
-        margin-right: 5px;
     }
 }
 
