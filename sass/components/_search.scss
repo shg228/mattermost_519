@@ -22,8 +22,71 @@
     }
 }
 
+body {
+    &.ltr {
+        .search__icon {
+            left: 9px;
+        }
+        .sidebar__search-clear {
+            right: 0;            
+        }
+        .search-bar__container {
+            padding-left: 8px;
+        }
+        .search__form {
+            .LoadingSpinner {
+                right: 8px;
+            }
+        }
+        .search-item__container {
+            padding: 0 1em 16px;
+            &:hover {
+                .post__header {
+                    padding-right: 105px;
+                }
+            }
+    
+            .post__header {
+                padding-right: 70px;
+            }
+            .search-channel__archived {
+                float: right;
+            }
+        }
+    }
+    &.rtl {
+        .search__icon {
+            right: 9px;
+        }
+        .sidebar__search-clear {
+            left: 0;            
+        }
+        .search-bar__container {
+            padding-right: 8px;
+        }
+        .search__form {
+            .LoadingSpinner {
+                left: 8px;
+            }
+        }
+        .search-item__container {
+            padding: 0 0 16px 1em;
+            &:hover {
+                .post__header {
+                    padding-left: 105px;
+                }
+            }
+            .post__header {
+                padding-left: 70px;
+            }
+            .search-channel__archived {
+                float: left;
+            }
+        }
+    }
+}
+
 .search__icon {
-    left: 9px;
     position: absolute;
     top: 6px;
 
@@ -39,7 +102,6 @@
     cursor: pointer;
     margin-right: 20px;
     position: absolute;
-    right: 0;
     top: 0;
     visibility: hidden;
     width: 22px;
@@ -57,10 +119,6 @@
     body.enable-animations & {
         @include single-transition(all, $transition-quick, ease-out);
     }
-}
-
-.search-bar__container {
-    padding-left: 8px;
 }
 
 .search__form {
@@ -104,7 +162,6 @@
         @include opacity(0.5);
         font-size: 1em;
         position: absolute;
-        right: 8px;
         top: 5px;
     }
 }
@@ -139,20 +196,9 @@
 .search-item__container {
     .post {
         margin: 0;
-        padding: 0 1em 16px;
 
         &:first-child {
             border: none;
-        }
-
-        &:hover {
-            .post__header {
-                padding-right: 105px;
-            }
-        }
-
-        .post__header {
-            padding-right: 70px;
         }
 
         .search-channel__name {
@@ -162,7 +208,6 @@
 
         .search-channel__archived {
             opacity: 0.5;
-            float: right;
         }
     }
 }
