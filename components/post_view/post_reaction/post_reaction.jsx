@@ -76,6 +76,7 @@ export default class PostReaction extends React.PureComponent {
                         spaceRequiredAbove={spaceRequiredAbove}
                         n={true}
                         spaceRequiredBelow={spaceRequiredBelow}
+                        isRtl={this.props.isRtl}
                     />
                     <OverlayTrigger
                         className='hidden-xs'

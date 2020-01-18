@@ -286,7 +286,7 @@ export default class DotMenu extends React.PureComponent {
                 <OverlayTrigger
                     className='hidden-xs'
                     delayShow={500}
-                    placement='top'
+                    placement={'top'}
                     overlay={this.tooltip}
                     rootClose={true}
                 >

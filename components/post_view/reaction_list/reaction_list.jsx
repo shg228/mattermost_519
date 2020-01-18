@@ -46,6 +46,7 @@ export default class ReactionList extends React.PureComponent {
              */
             addReaction: PropTypes.func.isRequired,
         }),
+        isRtl: PropTypes.bool,
     }
 
     constructor(props) {
@@ -137,6 +138,7 @@ export default class ReactionList extends React.PureComponent {
                         onEmojiClick={this.handleEmojiClick}
                         rightOffset={rightOffset}
                         topOffset={-5}
+                        isRtl={this.props.isRtl}
                     />
                     <OverlayTrigger
                         placement='top'

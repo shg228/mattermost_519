@@ -83,6 +83,7 @@ export default class TeamSidebar extends React.PureComponent {
                         mentions={member.mention_count}
                         teamIconUrl={Utils.imageURLForTeam(team)}
                         switchTeam={this.props.actions.switchTeam}
+                        placement={this.props.isRtl ? 'left' : 'right'}
                     />
                 );
             });
@@ -101,6 +102,7 @@ export default class TeamSidebar extends React.PureComponent {
                     }
                     content={'+'}
                     switchTeam={this.props.actions.switchTeam}
+                    placement={this.props.isRtl ? 'left' : 'right'}
                 />
             );
         } else {
@@ -120,6 +122,7 @@ export default class TeamSidebar extends React.PureComponent {
                         }
                         content={'+'}
                         switchTeam={this.props.actions.switchTeam}
+                        placement={this.props.isRtl ? 'left' : 'right'}
                     />
                 </SystemPermissionGate>
             );

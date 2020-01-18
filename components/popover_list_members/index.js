@@ -10,6 +10,7 @@ import {getCurrentUserId, getUserStatuses, makeGetProfilesInChannel} from 'matte
 import {openDirectChannelToUserId} from 'actions/channel_actions.jsx';
 import {loadProfilesAndStatusesInChannel} from 'actions/user_actions.jsx';
 import {openModal} from 'actions/views/modals';
+import {getLanguageInfo} from 'i18n/i18n';
 
 import PopoverListMembers from './popover_list_members.jsx';
 
@@ -20,7 +21,11 @@ function makeMapStateToProps() {
         const stats = getAllChannelStats(state)[ownProps.channel.id] || {};
         const users = doGetProfilesInChannel(state, ownProps.channel.id, true);
 
+        const currentLocale = state.entities.users.profiles[state.entities.users.currentUserId].locale;
+        const isRtl = getLanguageInfo(currentLocale).direction === 'rtl';
+
         return {
+            isRtl: isRtl,
             currentUserId: getCurrentUserId(state),
             memberCount: stats.member_count,
             users,

@@ -260,7 +260,7 @@ export default class PopoverListMembers extends React.Component {
                     onHide={this.closePopover}
                     show={this.state.showPopover}
                     target={this.getTargetPopover}
-                    placement='bottom'
+                    placement={this.props.isRtl ? 'right' : 'left'}
                 >
                     <Popover
                         className='member-list__popover'

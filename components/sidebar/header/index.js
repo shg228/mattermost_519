@@ -8,6 +8,7 @@ import {getInt} from 'mattermost-redux/selectors/entities/preferences';
 
 import {Preferences, TutorialSteps} from 'utils/constants';
 import * as Utils from 'utils/utils.jsx';
+import {getLanguageInfo} from 'i18n/i18n';
 
 import SidebarHeader from './sidebar_header.jsx';
 
@@ -18,10 +19,15 @@ function mapStateToProps(state) {
     const enableTutorial = config.EnableTutorial === 'true';
 
     const showTutorialTip = getInt(state, Preferences.TUTORIAL_STEP, currentUser.id) === TutorialSteps.MENU_POPOVER && !Utils.isMobile();
-
+    let isRtl = false;
+    try {
+        const currentLocale = state.entities.users.profiles[state.entities.users.currentUserId].locale;
+        isRtl = getLanguageInfo(currentLocale).direction === 'rtl';
+    } catch (e) {}
     return {
         enableTutorial,
         showTutorialTip,
+        isRtl: isRtl,
     };
 }
 

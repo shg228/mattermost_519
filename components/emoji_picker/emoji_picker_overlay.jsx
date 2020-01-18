@@ -32,6 +32,7 @@ export default class EmojiPickerOverlay extends React.PureComponent {
         spaceRequiredAbove: PropTypes.number,
         spaceRequiredBelow: PropTypes.number,
         enableGifPicker: PropTypes.bool,
+        isRtl: PropTypes.bool,
     };
 
     // Reasonable defaults calculated from from the center channel
@@ -81,7 +82,7 @@ export default class EmojiPickerOverlay extends React.PureComponent {
         return (
             <Overlay
                 show={this.props.show}
-                placement={this.state.placement}
+                placement={this.props.isRtl ? 'right' : 'top'}
                 rootClose={true}
                 container={this.props.container}
                 onHide={this.props.onHide}

@@ -1213,6 +1213,7 @@ export default class CreatePost extends React.PureComponent {
                         onGifClick={this.handleGifClick}
                         enableGifPicker={this.props.enableGifPicker}
                         topOffset={-7}
+                        isRtl={this.props.isRtl}
                     />
                     <button
                         type='button'

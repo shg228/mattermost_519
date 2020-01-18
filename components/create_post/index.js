@@ -40,6 +40,7 @@ import {setGlobalItem, actionOnGlobalItemsWithPrefix} from 'actions/storage';
 import {openModal} from 'actions/views/modals';
 import {Constants, Preferences, StoragePrefixes, TutorialSteps, UserStatuses} from 'utils/constants';
 import {canUploadFiles} from 'utils/file_utils';
+import {getLanguageInfo} from 'i18n/i18n';
 
 import CreatePost from './create_post.jsx';
 
@@ -64,8 +65,14 @@ function makeMapStateToProps() {
         const userIsOutOfOffice = getStatusForUserId(state, currentUserId) === UserStatuses.OUT_OF_OFFICE;
         const badConnection = connectionErrorCount(state) > 1;
         const isTimezoneEnabled = config.ExperimentalTimezone === 'true';
+        let isRtl = false;
+        try {
+            const currentLocale = state.entities.users.profiles[state.entities.users.currentUserId].locale;
+            isRtl = getLanguageInfo(currentLocale).direction === 'rtl';
+        } catch (e) {}
 
         return {
+            isRtl: isRtl,
             currentTeamId: getCurrentTeamId(state),
             currentChannel,
             currentChannelMembersCount,

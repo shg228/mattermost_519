@@ -68,7 +68,7 @@ export default class SidebarHeaderDropdownButton extends React.PureComponent {
                 {tutorialTip}
                 <OverlayTrigger
                     delayShow={Constants.OVERLAY_TIME_DELAY}
-                    placement='right'
+                    placement={this.props.isRtl ? 'left' : 'right'}
                     overlay={mainMenuToolTip}
                 >
                     <div

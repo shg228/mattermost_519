@@ -66,6 +66,7 @@ export default class SidebarHeaderDropdown extends React.PureComponent {
         return (
             <MenuWrapper>
                 <SidebarHeaderDropdownButton
+                    isRtl={this.props.isRtl}
                     showTutorialTip={this.props.showTutorialTip}
                     teamDescription={this.props.teamDescription}
                     currentUser={this.props.currentUser}

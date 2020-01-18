@@ -6,6 +6,7 @@ import {bindActionCreators} from 'redux';
 import {getCurrentTeamId} from 'mattermost-redux/selectors/entities/teams';
 
 import {getLicense, getConfig} from 'mattermost-redux/selectors/entities/general';
+import {getLanguageInfo} from 'i18n/i18n';
 
 import {openModal} from 'actions/views/modals';
 import {
@@ -20,12 +21,18 @@ import {
 import DotMenu from './dot_menu.jsx';
 
 function mapStateToProps(state) {
+    let isRtl = false;
+    try {
+        const currentLocale = state.entities.users.profiles[state.entities.users.currentUserId].locale;
+        isRtl = getLanguageInfo(currentLocale).direction === 'rtl';
+    } catch (e) {}
     return {
         components: state.plugins.components,
         postEditTimeLimit: getConfig(state).PostEditTimeLimit,
         isLicensed: getLicense(state).IsLicensed === 'true',
         teamId: getCurrentTeamId(state),
         pluginMenuItems: state.plugins.components.PostDropdownMenu,
+        isRtl: isRtl,
     };
 }
 
