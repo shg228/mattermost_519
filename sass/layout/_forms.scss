@@ -34,6 +34,25 @@
     margin: 0 0 0.8rem;
 }
 
+body {
+    &.ltr {
+        .form-horizontal {
+            .form__label {
+                padding-right: 3px;
+                text-align: left;
+            }
+        }
+    }
+    &.rtl {
+        .form-horizontal {
+            .form__label {
+                padding-left: 3px;
+                text-align: right;
+            }
+        }
+    }
+}
+
 .form-horizontal {
     .modal-intro {
         margin: -10px 0 30px;
@@ -42,8 +61,6 @@
     .form__label {
         font-size: 1.1em;
         font-weight: 600;
-        padding-right: 3px;
-        text-align: left;
 
         &.light {
             @include opacity(.6);
