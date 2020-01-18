@@ -2,6 +2,9 @@
 // See LICENSE.txt for license information.
 
 /* eslint-disable import/order */
+
+const fa = require('./fa.json');
+
 const de = require('./de.json');
 
 const es = require('./es.json');
@@ -33,6 +36,7 @@ const zhTW = require('./zh-TW.json');
 const zhCN = require('./zh-CN.json');
 
 import {addLocaleData} from 'react-intl';
+import faLocaleData from 'react-intl/locale-data/fa';
 import deLocaleData from 'react-intl/locale-data/de';
 import enLocaleData from 'react-intl/locale-data/en';
 import esLocaleData from 'react-intl/locale-data/es';
@@ -54,101 +58,124 @@ import store from 'stores/redux_store.jsx';
 
 // should match the values in model/config.go
 const languages = {
+    fa: {
+        value: 'fa',
+        name: 'Persian',
+        order: 0,
+        url: fa,
+        direction: 'rtl',
+    },
     de: {
         value: 'de',
         name: 'Deutsch',
-        order: 0,
+        order: 1,
         url: de,
+        direction: 'ltr',
     },
     en: {
         value: 'en',
         name: 'English',
-        order: 1,
+        order: 2,
         url: '',
+        direction: 'ltr',
     },
     es: {
         value: 'es',
         name: 'Español',
-        order: 2,
+        order: 3,
         url: es,
+        direction: 'ltr',
     },
     fr: {
         value: 'fr',
         name: 'Français',
-        order: 3,
+        order: 4,
         url: fr,
+        direction: 'ltr',
     },
     it: {
         value: 'it',
         name: 'Italiano',
-        order: 4,
+        order: 5,
         url: it,
+        direction: 'ltr',
     },
     ja: {
         value: 'ja',
         name: '日本語',
         order: 15,
         url: ja,
+        direction: 'ltr',
     },
     ko: {
         value: 'ko',
         name: '한국어 (Alpha)',
-        order: 12,
+        order: 16,
         url: ko,
+        direction: 'ltr',
     },
     nl: {
         value: 'nl',
         name: 'Nederlands (Alpha)',
-        order: 5,
+        order: 6,
         url: nl,
+        direction: 'ltr',
     },
     pl: {
         value: 'pl',
         name: 'Polski',
-        order: 6,
+        order: 7,
         url: pl,
+        direction: 'ltr',
     },
     'pt-BR': {
         value: 'pt-BR',
         name: 'Português (Brasil)',
-        order: 7,
+        order: 8,
         url: ptBR,
+        direction: 'ltr',
     },
     ro: {
         value: 'ro',
         name: 'Română',
-        order: 8,
+        order: 9,
         url: ro,
+        direction: 'ltr',
     },
     ru: {
         value: 'ru',
         name: 'Pусский (Alpha)',
         order: 10,
         url: ru,
+        direction: 'ltr',
     },
     tr: {
         value: 'tr',
         name: 'Türkçe',
-        order: 9,
+        order: 11,
         url: tr,
+        direction: 'ltr',
     },
     uk: {
         value: 'uk',
         name: 'Yкраїнська (Alpha)',
-        order: 11,
+        order: 12,
         url: uk,
+        direction: 'ltr',
     },
     'zh-TW': {
         value: 'zh-TW',
         name: '中文 (繁體)',
-        order: 14,
+        order: 13,
         url: zhTW,
+        direction: 'ltr',
     },
     'zh-CN': {
         value: 'zh-CN',
         name: '中文 (简体)',
-        order: 13,
+        order: 14,
         url: zhCN,
+        direction: 'ltr',
     },
 };
 
@@ -179,6 +206,7 @@ export function isLanguageAvailable(locale) {
 
 export function doAddLocaleData() {
     addLocaleData(enLocaleData);
+    addLocaleData(faLocaleData);
     addLocaleData(deLocaleData);
     addLocaleData(esLocaleData);
     addLocaleData(frLocaleData);
