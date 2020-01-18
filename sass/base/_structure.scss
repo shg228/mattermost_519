@@ -10,8 +10,15 @@ body {
     // }
     &.rtl {
         direction: rtl;
-        [class^="col-"] {
+        [class*="col-"] {
             float: right;
+        }
+        .fa-angle-left, .fa-angle-right, .fa-sign-out {
+            transform: rotate(180deg);
+        }
+        .signup-team__container .btn .fa:last-child {
+            margin-right: 8px;
+            margin-left: unset;
         }
         .scrollbar--view {
             margin-left: -8px!important;
@@ -139,7 +146,7 @@ img {
     direction: ltr;
 }
 
-body.rtl .Menu .dropdown-menu {
+body.rtl .post-list__table .dropdown-menu {
     right: inherit!important;
     left: 0!important;
     button {
