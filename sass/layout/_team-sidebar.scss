@@ -148,7 +148,7 @@ body {
 }
 
 body {
-    &.ltr {
+    &.ltr .multi-teams {
         .sidebar--left {
             left: 65px;
         }
@@ -156,7 +156,7 @@ body {
             margin-left: 285px;
         }
     }
-    &.rtl {
+    &.rtl .multi-teams {
         .sidebar--left {
             right: 65px;
         }
