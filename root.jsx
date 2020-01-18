@@ -16,8 +16,29 @@ import 'katex/dist/katex.min.css';
 import {isDevMode, setCSRFFromCookie} from 'utils/utils';
 import store from 'stores/redux_store.jsx';
 import App from 'components/app';
+import {getLanguageInfo} from 'i18n/i18n';
 
 PDFJS.disableWorker = true;
+
+store.subscribe(() => {
+    let isRtl = false;
+    try {
+        const state = store.getState();
+        const currentLocale = state.entities.users.profiles[state.entities.users.currentUserId].locale;
+        isRtl = getLanguageInfo(currentLocale).direction === 'rtl';
+    } catch (e) {}
+    if (isRtl && !document.body.classList.contains('rtl')) {
+        if (document.body.classList.contains('ltr')) {
+            document.body.classList.remove('ltr');
+        }
+        document.body.classList.add('rtl');
+    } else if (!isRtl && !document.body.classList.contains('ltr')) {
+        if (document.body.classList.contains('rtl')) {
+            document.body.classList.remove('rtl');
+        }
+        document.body.classList.add('ltr');
+    }
+});
 
 // This is for anything that needs to be done for ALL react components.
 // This runs before we start to render anything.
